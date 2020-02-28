@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listaProdutosSubReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="817ee3ef-b0c8-4c74-910e-96106fc6ffb6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="precoVenda" class="java.math.BigDecimal"/>
+	<field name="descricao" class="java.lang.String"/>
+	<background>
+		<band height="90" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="90" forecolor="#0092CC" backcolor="#0092CC" uuid="6ecfc956-28c4-4e97-8b31-59657bbf1e6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="100" height="30" uuid="5f174590-85ed-4e3c-9e3d-7fc8a58a728b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83a2f8b0-2d3c-4e93-9091-52c8b242892d"/>
+				</reportElement>
+				<text><![CDATA[precoVenda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="11" width="100" height="30" uuid="9e3eb034-9c23-4371-9165-2598829771d8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="521c99fc-b647-479e-9e59-bd5e43be74dd"/>
+				</reportElement>
+				<text><![CDATA[descricao]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="100" height="30" uuid="bc1551d2-8502-45c4-9a2e-0b5c956c93f0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83a2f8b0-2d3c-4e93-9091-52c8b242892d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{precoVenda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="10" width="100" height="30" uuid="28049a3c-180b-4af0-bd17-d16a96fd822d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="521c99fc-b647-479e-9e59-bd5e43be74dd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

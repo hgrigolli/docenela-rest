@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="orcamento" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c72f96d9-38c2-435f-af49-97a4a2b29c57">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="687"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Dataset1" uuid="28cc84d0-1f21-4774-9f74-fd1a34bbb3de">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="logo" class="java.awt.Image"/>
+	<parameter name="date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cliente.primeiroNome" class="java.lang.String"/>
+	<field name="evento.descricao" class="java.lang.String"/>
+	<field name="evento.data" class="java.util.Date"/>
+	<field name="produtos" class="java.util.List"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="1" width="595" height="800" forecolor="#0092CC" backcolor="#0092CC" uuid="dea301a2-7bcf-4310-9a66-f1349b36dda4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="0" width="597" height="65" forecolor="#00577C" backcolor="#00577C" uuid="29f958b3-9df5-4ee0-905e-9fd33029926f"/>
+				<staticText>
+					<reportElement style="Title" x="206" y="14" width="214" height="35" uuid="cf1fabd8-9376-4a95-a65d-c762a7404011"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Dancing Script" size="27" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Orçamento]]></text>
+				</staticText>
+				<image onErrorType="Icon">
+					<reportElement x="40" y="6" width="50" height="50" uuid="83eaf04c-4b09-4cee-8d6f-addfcae8f7c9"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="70" height="30" uuid="f9e39188-49a6-40c1-8bf3-d8fd98c6cfcb"/>
+				<textElement>
+					<font fontName="Pacifico" size="12"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="0" width="120" height="30" uuid="ebb6325a-e5c2-4f75-aaa7-6eb67e9e73c6"/>
+				<textElement>
+					<font fontName="Pacifico"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente.primeiroNome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="30" width="120" height="30" uuid="cc557a21-9e9e-45b8-a5cd-190d492c39b5"/>
+				<textElement>
+					<font fontName="Pacifico"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{evento.descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="60" width="120" height="30" uuid="aa3f405f-a788-4c20-ac86-75b246c6d9cf"/>
+				<textElement>
+					<font fontName="Pacifico"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{evento.data}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="70" height="30" uuid="7cf969bc-ac08-4d4a-b107-71ab4a399e88"/>
+				<textElement>
+					<font fontName="Pacifico" size="12"/>
+				</textElement>
+				<text><![CDATA[Evento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="70" height="30" uuid="9ac967d1-3bfc-4153-aa80-5028ae79eb1f"/>
+				<textElement>
+					<font fontName="Pacifico" size="12"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<subreport>
+				<reportElement x="1" y="0" width="552" height="30" uuid="1bdb89b4-9e65-4238-b904-bb8800c838ab"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{produtos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["listaProdutosSubReport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="25" forecolor="#D0B48E" backcolor="#00577C" uuid="21b8ec89-3912-4f38-b1d2-846c348d496b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="24" forecolor="#FFFFFF" uuid="2f1f4647-386f-4ee9-b3b1-779c70fd7960"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Pacifico" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="24" forecolor="#FFFFFF" uuid="c50a7647-9d9b-4145-89d7-15adb353fac4"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Pacifico" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement style="Title" x="20" y="0" width="278" height="24" forecolor="#FFFFFF" uuid="2a75ce15-0152-4154-9a45-a23c6a9d3107"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="Pacifico" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Orçamento gerado em " + $P{date}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
