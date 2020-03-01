@@ -23,12 +23,12 @@ public class GeraRelatorio {
 
         URL initPath = this.getClass().getClassLoader().getResource("reports");
 
-        String pathMainReport = String.format("%s/src/orcamento.jrxml", initPath.getPath());
-        String pathSubReport = String.format("%s/src/listaProdutosSubReport.jrxml", initPath.getPath());
-        String logoPath = String.format("%s/images/logo.png", initPath.getPath());
+        String pathMainReport = String.format("%s!/src!/orcamento.jrxml", initPath.getPath());
+        String pathSubReport = String.format("%s!/src!/listaProdutosSubReport.jrxml", initPath.getPath());
+        String logoPath = String.format("%s!/images!/logo.png", initPath.getPath());
 
-        String pathJASPER = String.format("%s/src/orcamento.jasper", initPath.getPath());
-        String pathPDF = String.format("%s/orcamento.pdf", initPath.getPath());
+        String pathJASPER = String.format("%s!/src!/orcamento.jasper", initPath.getPath());
+        String pathPDF = String.format("%s!/orcamento.pdf", initPath.getPath());
 
         File file = new File(pathPDF);
 
