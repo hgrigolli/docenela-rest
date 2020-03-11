@@ -1,5 +1,8 @@
 package br.com.docenela.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Cliente {
 
     private Integer id;

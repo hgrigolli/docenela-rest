@@ -7,16 +7,6 @@
 	</queryString>
 	<field name="precoVenda" class="java.math.BigDecimal"/>
 	<field name="descricao" class="java.lang.String"/>
-	<background>
-		<band height="90" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<frame>
-				<reportElement mode="Opaque" x="-20" y="0" width="595" height="90" forecolor="#0092CC" backcolor="#0092CC" uuid="6ecfc956-28c4-4e97-8b31-59657bbf1e6e">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-			</frame>
-		</band>
-	</background>
 	<title>
 		<band splitType="Stretch"/>
 	</title>
@@ -24,33 +14,63 @@
 		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="41" splitType="Stretch">
+		<band height="35" splitType="Stretch">
 			<staticText>
-				<reportElement x="10" y="10" width="100" height="30" uuid="5f174590-85ed-4e3c-9e3d-7fc8a58a728b">
+				<reportElement x="0" y="0" width="100" height="30" forecolor="#E0E0E0" uuid="5f174590-85ed-4e3c-9e3d-7fc8a58a728b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83a2f8b0-2d3c-4e93-9091-52c8b242892d"/>
 				</reportElement>
-				<text><![CDATA[precoVenda]]></text>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="16"/>
+				</textElement>
+				<text><![CDATA[Produto]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="130" y="11" width="100" height="30" uuid="9e3eb034-9c23-4371-9165-2598829771d8">
+				<reportElement x="170" y="0" width="120" height="30" forecolor="#E0E0E0" uuid="9e3eb034-9c23-4371-9165-2598829771d8">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="521c99fc-b647-479e-9e59-bd5e43be74dd"/>
 				</reportElement>
-				<text><![CDATA[descricao]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="16"/>
+				</textElement>
+				<text><![CDATA[Preço Unitário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="110" height="30" forecolor="#E0E0E0" uuid="4f508737-8739-4aba-b823-a3493e5a5f33">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="521c99fc-b647-479e-9e59-bd5e43be74dd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="16"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="90" height="30" forecolor="#E0E0E0" uuid="5fc23dfe-db05-4931-8058-bd890dbe99b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="521c99fc-b647-479e-9e59-bd5e43be74dd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="16"/>
+				</textElement>
+				<text><![CDATA[Subtotal]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="44" splitType="Stretch">
+		<band height="31" splitType="Stretch">
 			<textField>
-				<reportElement x="10" y="10" width="100" height="30" uuid="bc1551d2-8502-45c4-9a2e-0b5c956c93f0">
+				<reportElement x="170" y="0" width="120" height="28" forecolor="#E0E0E0" uuid="bc1551d2-8502-45c4-9a2e-0b5c956c93f0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83a2f8b0-2d3c-4e93-9091-52c8b242892d"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$F{precoVenda}]]></textFieldExpression>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("R$ #,##0.00").format($F{precoVenda});]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="130" y="10" width="100" height="30" uuid="28049a3c-180b-4af0-bd17-d16a96fd822d">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="1" width="160" height="30" forecolor="#E0E0E0" uuid="28049a3c-180b-4af0-bd17-d16a96fd822d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="521c99fc-b647-479e-9e59-bd5e43be74dd"/>
 				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -58,10 +78,26 @@
 	<columnFooter>
 		<band splitType="Stretch"/>
 	</columnFooter>
-	<pageFooter>
-		<band height="32" splitType="Stretch"/>
-	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="350" y="0" width="100" height="42" forecolor="#E0E0E0" uuid="5c5631e6-81b4-4175-a0e5-6c5533664d7d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83a2f8b0-2d3c-4e93-9091-52c8b242892d"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="19"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="-1" width="70" height="42" forecolor="#E0E0E0" uuid="ced20d32-73fc-4ecb-a384-411efffb0988">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="521c99fc-b647-479e-9e59-bd5e43be74dd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Pacifico" size="14"/>
+				</textElement>
+				<text><![CDATA[---]]></text>
+			</staticText>
+		</band>
 	</summary>
 </jasperReport>
